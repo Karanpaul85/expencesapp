@@ -10,7 +10,7 @@ const Register = () => {
       </div>
       <div className="flex flex-col items-center justify-center lg:w-1/3 w-full h-full lg:min-h-screen p-8 rounded-t-2xl bg-white -mt-4 bg-primaryWhite">
         <h1 className="w-full text-center text-primaryRed text-2xl font-medium leading-tight mb-4">
-          Sign In
+          Sign UP
         </h1>
         <form className="flex flex-col items-center w-full">
           <div className="relative w-full mb-4  max-w-xs">
@@ -97,7 +97,7 @@ const Register = () => {
           </div>
           <div className="relative w-full mb-4 text-center">
             <button className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-3xl text-primaryWhite  max-w-xs">
-              Sign In
+              Sign Up
             </button>
           </div>
         </form>
