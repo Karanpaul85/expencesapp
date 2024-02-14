@@ -14,7 +14,7 @@ export const metadata = {
       "Effortlessly manage your finances with our intuitive expense tracking web application. Track expenses, create budgets, and analyze spending patterns all in one place. Stay organized with receipt scanning, customizable categories, and real-time updates. Simplify your financial management and take control of your expenses today!",
     images: [
       {
-        url: "/images/budget.png", // Must be an absolute URL
+        url: "/images/budget.jpg", // Must be an absolute URL
         width: 800,
         height: 600,
         alt: "ExpenseMaster",
@@ -27,7 +27,7 @@ export const metadata = {
   },
   title: "ExpenseMaster: Your Ultimate Financial Tracking Solution",
   icons: {
-    icon: { url: "/images/budget.png", href: "/images/budget.png" },
+    icon: { url: "/images/budget.jpg", href: "/images/budget.jpg" },
   },
   generator: "ExpenseMaster",
   applicationName: "ExpenseMaster",

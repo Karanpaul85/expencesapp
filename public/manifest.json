@@ -5,18 +5,18 @@
   "description": "ExpenseMaster: Your Ultimate Financial Tracking Solution",
   "icons": [
     {
-      "src": "/appIcons/icon-192x192.png",
+      "src": "/appIcons/icon-192x192.jpg",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/appIcons/icon-384x384.png",
+      "src": "/appIcons/icon-384x384.jpg",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "/appIcons/icon-512x512.png",
+      "src": "/appIcons/icon-512x512.jpg",
       "sizes": "512x512",
       "type": "image/png"
     }
