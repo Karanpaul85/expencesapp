@@ -1,16 +1,27 @@
 import withPWA from "@ducanh2912/next-pwa";
 
-const nextConfig = {};
-
 export default withPWA({
-  ...nextConfig,
-  dest: "public",
-  cacheOnFrontEndNav: true,
-  aggressiveFrontEndNavCaching: true,
-  reloadOnOnline: true,
-  swcMinify: true,
-  disable: false,
-  workboxOptions: {
-    disableDevLogs: true,
+  pwa: {
+    dest: "public",
+    disable: false,
+    register: true,
+    scope: "/",
+    sw: "service-worker.js",
+    runtimeCaching: [
+      {
+        urlPattern: /^\/_next\/static\/.*$/,
+        handler: "CacheFirst",
+        options: {
+          cacheName: "static-assets",
+          expiration: {
+            maxAgeSeconds: 86400,
+          },
+        },
+      },
+    ],
+    workboxOpts: {
+      swDest: "public/service-worker.js",
+      disableDevLogs: true,
+    },
   },
 });
