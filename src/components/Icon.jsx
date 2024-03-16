@@ -1,7 +1,7 @@
 import Image from "next/image";
 import PropTypes from "prop-types";
 
-const Icon = ({ name, size, classes }) => {
+const Icon = ({ name = "user", size = "44", classes = "w-4 h-4" }) => {
   return (
     <Image
       src={`/icons/${name}.svg`}
@@ -15,10 +15,9 @@ const Icon = ({ name, size, classes }) => {
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  size: PropTypes.string,
+  classes: PropTypes.string,
 };
-Icon.defaultProps = {
-  name: "user",
-  size: "44",
-  classes: "w-4 h-4",
-};
+
 export default Icon;

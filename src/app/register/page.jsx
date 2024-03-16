@@ -1,6 +1,7 @@
 "use client";
-
 import Icon from "@/components/Icon";
+import CustomButton from "@/components/cutomButton";
+import TextField from "@/components/textFiled";
 import Link from "next/link";
 
 const Register = () => {
@@ -14,54 +15,46 @@ const Register = () => {
           Sign UP
         </h1>
         <form className="flex flex-col items-center w-full">
-          <div className="relative w-full mb-4  max-w-xs">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-              <Icon name="user" size="44" classes="w-4 h-4" />
-            </div>
-            <input
-              type="text"
-              className="rounded-3xl border border-lightGrey text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Enter your name"
-              required=""
-            ></input>
-          </div>
-          <div className="relative w-full mb-4  max-w-xs">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+          <TextField
+            type="text"
+            variant="primary"
+            placeholder="Enter your name"
+            id="userName"
+            isRequired={true}
+            startAdornment={<Icon name="user" size="44" classes="w-4 h-4" />}
+          />
+          <TextField
+            type="email"
+            variant="primary"
+            placeholder="Enter your email"
+            id="userEmail"
+            isRequired={true}
+            startAdornment={
               <Icon name="envelope" size="44" classes="w-4 h-4" />
-            </div>
-            <input
-              type="text"
-              className="rounded-3xl border border-lightGrey text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Enter your email"
-              required=""
-            ></input>
-          </div>
-          <div className="relative w-full mb-4  max-w-xs">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            }
+          />
+          <TextField
+            type="password"
+            variant="primary"
+            placeholder="Enter your password"
+            id="userPassword"
+            isRequired={true}
+            startAdornment={
               <Icon name="lock-closed" size="44" classes="w-4 h-4" />
-            </div>
-            <input
-              type="password"
-              className="rounded-3xl border border-lightGrey text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Enter your password"
-              required=""
-            ></input>
-          </div>
-          <div className="relative w-full mb-4  max-w-xs">
-            <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            }
+          />
+          <TextField
+            type="tel"
+            variant="primary"
+            placeholder="Enter your mobile number"
+            id="userPhone"
+            isRequired={true}
+            startAdornment={
               <Icon name="device-phone-mobile" size="44" classes="w-4 h-4" />
-            </div>
-            <input
-              type="tel"
-              className="rounded-3xl border border-lightGrey text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="Enter your mobile number"
-              required=""
-            ></input>
-          </div>
+            }
+          />
           <div className="relative w-full mb-4 text-center">
-            <button className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-3xl text-primaryWhite  max-w-xs">
-              Sign Up
-            </button>
+            <CustomButton variant="primary" buttonText="Sign Up" isDisabled={true}/>
           </div>
         </form>
         <div className="w-full text-center text-darkgrey">
