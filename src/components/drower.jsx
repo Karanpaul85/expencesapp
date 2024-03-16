@@ -8,7 +8,7 @@ export default function Drower({
   return (
     <div
       className={`fixed w-full left-0 bg-darkBlack z-10 overflow-y-auto transition-all ${
-        isFullHeight ? "h-[calc(100vh-50px)] top-[50px]" : "h-full top-0"
+        isFullHeight ? "h-[calc(100vh-50px)] top-[50px]" : "h-full"
       } ${isOpenDrower ? "bg-opacity-90 top-0" : "bg-opacity-0 -top-full"}`}
       onClick={handleClose}
     >
