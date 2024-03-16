@@ -6,10 +6,10 @@ import TextField from "@/components/textFiled";
 const Profile = () => {
   return (
     <>
-      <Layout>
+      <Layout headerText="Profile">
         <div className="w-full flex items-center mb-5">
           <div className="w-[60px] h-[60px] rounded-full bg-lightGrey flex items-center justify-center">
-            <Icon name="camera" classes="w-6 h-6"/>
+            <Icon name="camera" classes="w-6 h-6" />
           </div>
           <div className="ml-5 font-medium text-28 text-darkBlack">
             Karan Paul
@@ -25,6 +25,7 @@ const Profile = () => {
             isAutoComplete={false}
             isRequired={false}
             disabled
+            readOnly
           />
           <TextField
             variant="primary"
@@ -64,7 +65,7 @@ const Profile = () => {
           <TextField
             variant="primary"
             id="password"
-            placeholder="Where you live"
+            placeholder="Change Password"
             type="password"
             startAdornment={<Icon name="lock-closed" classes="w-6 h-6" />}
             isRequired={true}
@@ -73,6 +74,7 @@ const Profile = () => {
             buttonText="Update Info"
             variant="primary"
             isDisabled={true}
+            userDefineClasses="uppercase font-medium text-16"
           />
         </form>
       </Layout>

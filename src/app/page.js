@@ -12,13 +12,13 @@ export default function Home() {
         </h1>
         <Link
           href="/register"
-          className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-3xl text-primaryWhite mb-4 max-w-xs"
+          className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-md text-primaryWhite mb-4 max-w-xs"
         >
           Sign Up
         </Link>
         <Link
           href="/login"
-          className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-3xl text-primaryWhite max-w-xs"
+          className="transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-md text-primaryWhite max-w-xs"
         >
           Sign In
         </Link>
