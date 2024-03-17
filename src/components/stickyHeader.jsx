@@ -1,12 +1,15 @@
 "use client";
+import { useRouter } from "next/navigation";
 import Icon from "./Icon";
 
-export default function StickyHeader({ headerText }) {
+export default function StickyHeader({ headerText, setIsOpen }) {
+  const router = useRouter();
   const handleBackArrow = () => {
-    console.log("clicked");
+    setIsOpen(false);
+    router.back();
   };
   return (
-    <div className="fixed top-0 left-0 w-full h-[44px] flex items-center pl-5 pr-5 shadow-plus bg-primaryWhite">
+    <div className="fixed top-0 left-0 w-full h-[44px] flex items-center pl-5 pr-5 shadow-plus bg-primaryWhite cursor-pointer">
       <div
         className="w-[44px] h-full flex items-center"
         onClick={handleBackArrow}

@@ -8,6 +8,7 @@ export default function CustomButton({
   userDefineClasses = "",
   startAdornment = null,
   endAdornment = null,
+  isNoMargin = false,
 }) {
   const variantClasses = {
     primary: `transition hover:bg-primaryRedHover w-full bg-primaryRed text-center p-3 rounded-md text-primaryWhite ${
@@ -23,7 +24,7 @@ export default function CustomButton({
       "transition w-full bg-primaryWhite border border-lightGrey text-darkBlack text-left p-3 rounded-md",
   };
   return (
-    <div className="relative w-full mb-4">
+    <div className={`relative w-full ${isNoMargin ? "" : "mb-4"}`}>
       {startAdornment && (
         <div
           className={`flex absolute inset-y-0 left-0 items-center pl-3 pr-3 ${
@@ -58,7 +59,6 @@ export default function CustomButton({
           {endAdornment}
         </div>
       )}
-      <div className="relative"></div>
     </div>
   );
 }

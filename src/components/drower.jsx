@@ -17,7 +17,7 @@ export default function Drower({
           isFullHeight ? "h-[calc(100vh-50px)]" : "h-fit rounded-t-lg"
         } ${isOpenDrower ? "bottom-0" : "-bottom-full"} `}
       >
-        {!isFullHeight && heading &&(
+        {!isFullHeight && heading && (
           <h4 className="font-medium text-16 mb-5">{heading}</h4>
         )}
         {children}

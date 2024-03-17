@@ -18,12 +18,14 @@ module.exports = {
       primaryRedHover: "#C23A33",
       primaryWhite: "#fff",
       lightGrey: "#d5d5d5",
-      darkgrey: "#ccc",
+      darkgrey: "#999",
       darkBlack: "#222",
+      green: "#0C8F09",
     },
     boxShadow: {
       minus: "-4px 0px 4px rgba(0,0,0,0.25);",
       plus: "4px 0px 4px rgba(0,0,0,0.25);",
+      all: "0px 0px 4px rgba(0,0,0,0.25);",
     },
     fontSize: {
       10: "0.625rem",

@@ -1,12 +1,15 @@
 "use client";
+import { useState } from "react";
 import Icon from "@/components/Icon";
 import CustomButton from "@/components/cutomButton";
 import Drower from "@/components/drower";
 import Layout from "@/components/layout";
 import TextField from "@/components/textFiled";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import ProfilePhotoName from "@/components/profilePhotoName";
 
 const Profile = () => {
+  const router = useRouter();
   const [test, setTest] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [drowerType, setDrowerType] = useState("");
@@ -14,85 +17,76 @@ const Profile = () => {
   const handleClick = (clickType) => {
     setDrowerType(clickType);
     setIsOpen(true);
+    router.push(`#${clickType}`, undefined, { shallow: true });
   };
   const handleChnage = () => {
     console.log("test");
   };
-  const renderDrowerFields = () => {
-    switch (drowerType) {
-      case "marritalStatus":
-        return "marritalStatus";
-        break;
-      case "gender":
-        return "gender";
-        break;
-      case "dependend":
-        return "dependend";
-        break;
-      case "area":
-        return "area";
-        break;
-      case "password":
-        return (
-          <>
-            <TextField
-              id="currentPassword"
-              variant="primary"
-              inputValue={test}
-              type="password"
-              placeholder="Current Password"
-              isAutoComplete={false}
-              isRequired={false}
-              onChange={handleChnage}
-            />
-            <TextField
-              id="newPassword"
-              variant="primary"
-              inputValue={test}
-              type="password"
-              placeholder="New Password"
-              isAutoComplete={false}
-              isRequired={false}
-              onChange={handleChnage}
-            />
-            <TextField
-              id="confirmPassword"
-              variant="primary"
-              inputValue={test}
-              type="password"
-              placeholder="Confirm Password"
-              isAutoComplete={false}
-              isRequired={false}
-              onChange={handleChnage}
-            />
-            <CustomButton
-              buttonText="Update"
-              variant="primary"
-              isDisabled={true}
-              userDefineClasses="uppercase font-medium text-16"
-            />
-          </>
-        );
-        break;
-      default:
-        return "KP";
-        break;
-    }
+
+  const handleClose = () => {
+    setIsOpen(!isOpen);
+    router.back();
+  };
+
+  const renderPasswordDrower = () => {
+    return (
+      <>
+        <TextField
+          id="currentPassword"
+          variant="primary"
+          inputValue={test}
+          type="password"
+          placeholder="Current Password"
+          isAutoComplete={false}
+          isRequired={false}
+          onChange={handleChnage}
+        />
+        <TextField
+          id="newPassword"
+          variant="primary"
+          inputValue={test}
+          type="password"
+          placeholder="New Password"
+          isAutoComplete={false}
+          isRequired={false}
+          onChange={handleChnage}
+        />
+        <TextField
+          id="confirmPassword"
+          variant="primary"
+          inputValue={test}
+          type="password"
+          placeholder="Confirm Password"
+          isAutoComplete={false}
+          isRequired={false}
+          onChange={handleChnage}
+        />
+        <CustomButton
+          buttonText="Update"
+          variant="primary"
+          isDisabled={true}
+          userDefineClasses="uppercase font-medium text-16"
+        />
+      </>
+    );
+  };
+
+  const renderMarritalDrower = () => {
+    return "marritalStatus";
+  };
+
+  const renderGenderDrower = () => {
+    return "gender";
+  };
+  const renderDependendDrower = () => {
+    return "Dependend";
+  };
+  const renderAreaDrower = () => {
+    return "Area";
   };
   return (
-    <Layout headerText="Profile">
-      <div className="w-full flex items-center mb-5">
-        <input type="file" id="userPhoto" className="hidden" />
-        <label
-          className="w-[60px] h-[60px] rounded-full bg-lightGrey flex items-center justify-center"
-          htmlFor="userPhoto"
-        >
-          <Icon name="camera" classes="w-6 h-6" />
-        </label>
-        <div className="ml-5 font-medium text-28 text-darkBlack">
-          Karan Paul
-        </div>
-      </div>
+    <Layout headerText="Profile" setIsOpen={setIsOpen}>
+      <ProfilePhotoName />
       <form>
         <TextField
           variant="primary"
@@ -159,10 +153,14 @@ const Profile = () => {
       <Drower
         heading="Change Your Password"
         isOpenDrower={isOpen}
-        handleClose={() => setIsOpen(!isOpen)}
-        isFullHeight={false}
+        handleClose={handleClose}
+        isFullHeight={drowerType === "area" ? true : false}
       >
-        {renderDrowerFields()}
+        {drowerType === "password" && renderPasswordDrower()}
+        {drowerType === "marritalStatus" && renderMarritalDrower()}
+        {drowerType === "gender" && renderGenderDrower()}
+        {drowerType === "dependend" && renderDependendDrower()}
+        {drowerType === "area" && renderAreaDrower()}
       </Drower>
     </Layout>
   );
