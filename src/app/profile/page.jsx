@@ -17,7 +17,7 @@ const Profile = () => {
   const handleClick = (clickType) => {
     setDrowerType(clickType);
     setIsOpen(true);
-    router.push(`#${clickType}`, undefined, { shallow: true });
+    // router.push(`#${clickType}`, undefined, { shallow: true });
   };
   const handleChnage = () => {
     console.log("test");
