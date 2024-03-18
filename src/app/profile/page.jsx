@@ -1,24 +1,38 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Icon from "@/components/Icon";
 import CustomButton from "@/components/cutomButton";
 import Drower from "@/components/drower";
 import Layout from "@/components/layout";
 import TextField from "@/components/textFiled";
-// import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import ProfilePhotoName from "@/components/profilePhotoName";
 
 const Profile = () => {
-  // const router = useRouter();
+  const router = useRouter();
+  const pathName = usePathname();
   const [test, setTest] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [drowerType, setDrowerType] = useState("");
 
+  // useEffect to log drowerType changes
+  useEffect(() => {
+    console.log("Drower before type changed:", drowerType);
+    if (router) {
+      console.log("Drower type changed:", drowerType, router, pathName);
+      const newUrl = pathName + "#" + drowerType;
+      router.push(newUrl, undefined, {
+        shallow: true,
+      });
+    }
+    console.log("Drower after type changed:", drowerType);
+  }, [drowerType, pathName, router]);
+
   const handleClick = (clickType) => {
     setDrowerType(clickType);
     setIsOpen(true);
-    // router.push(`#${clickType}`, undefined, { shallow: true });
   };
+
   const handleChnage = () => {
     console.log("test");
   };
@@ -84,6 +98,7 @@ const Profile = () => {
   const renderAreaDrower = () => {
     return "Area";
   };
+
   return (
     <Layout headerText="Profile" setIsOpen={setIsOpen}>
       <ProfilePhotoName />
