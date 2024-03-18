@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Icon from "@/components/Icon";
 import CustomButton from "@/components/cutomButton";
 import Drower from "@/components/drower";
@@ -7,6 +7,7 @@ import Layout from "@/components/layout";
 import TextField from "@/components/textFiled";
 import { useRouter, usePathname } from "next/navigation";
 import ProfilePhotoName from "@/components/profilePhotoName";
+import { drowerConstant } from "@/utils/constant";
 
 const Profile = () => {
   const router = useRouter();
@@ -14,23 +15,15 @@ const Profile = () => {
   const [test, setTest] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [drowerType, setDrowerType] = useState("");
-
-  // useEffect to log drowerType changes
-  useEffect(() => {
-    console.log("Drower before type changed:", drowerType);
-    if (router) {
-      console.log("Drower type changed:", drowerType, router, pathName);
-      const newUrl = pathName + "#" + drowerType;
-      router.push(newUrl, undefined, {
-        shallow: true,
-      });
-    }
-    console.log("Drower after type changed:", drowerType);
-  }, [drowerType]);
+  const drowerConstants = drowerConstant;
 
   const handleClick = (clickType) => {
     setDrowerType(clickType);
     setIsOpen(true);
+    const newUrl = pathName + "#" + clickType;
+    router.push(newUrl, undefined, {
+      shallow: true,
+    });
   };
 
   const handleChnage = () => {
@@ -39,7 +32,7 @@ const Profile = () => {
 
   const handleClose = () => {
     setIsOpen(!isOpen);
-    // router.back();
+    router.back();
   };
 
   const renderPasswordDrower = () => {
@@ -164,7 +157,7 @@ const Profile = () => {
         userDefineClasses="uppercase font-medium text-16"
       />
       <Drower
-        heading="Change Your Password"
+        heading={drowerConstants[drowerType]}
         isOpenDrower={isOpen}
         handleClose={handleClose}
         isFullHeight={drowerType === "area" ? true : false}
