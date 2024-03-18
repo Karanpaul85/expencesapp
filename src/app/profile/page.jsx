@@ -87,69 +87,67 @@ const Profile = () => {
   return (
     <Layout headerText="Profile" setIsOpen={setIsOpen}>
       <ProfilePhotoName />
-      <form>
-        <TextField
-          variant="primary"
-          id="userId"
-          inputValue="Karanpaul85"
-          type="text"
-          startAdornment={<Icon name="user" />}
-          isAutoComplete={false}
-          isRequired={false}
-          disabled
-          readOnly
-        />
-        <CustomButton
-          type="button"
-          id="marritalStatus"
-          buttonText="Marrital Status"
-          variant="basicBtn"
-          startAdornment={<Icon name="marriage" />}
-          endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
-          onclick={(e) => handleClick("marritalStatus")}
-        />
-        <CustomButton
-          type="button"
-          id="gender"
-          buttonText="Gender"
-          variant="basicBtn"
-          startAdornment={<Icon name="gender" classes="w-6 h-6" />}
-          endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
-          onclick={(e) => handleClick("gender")}
-        />
-        <CustomButton
-          type="button"
-          id="dependend"
-          buttonText="Dependend on You"
-          variant="basicBtn"
-          startAdornment={<Icon name="family" classes="w-6 h-6" />}
-          endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
-          onclick={(e) => handleClick("dependend")}
-        />
-        <CustomButton
-          type="button"
-          id="area"
-          buttonText="Where you live"
-          variant="basicBtn"
-          startAdornment={<Icon name="map-pin" classes="w-6 h-6" />}
-          endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
-          onclick={(e) => handleClick("area")}
-        />
-        <CustomButton
-          type="button"
-          id="password"
-          buttonText="Change Password"
-          variant="basicBtn"
-          startAdornment={<Icon name="lock-closed" classes="w-6 h-6" />}
-          onclick={(e) => handleClick("password")}
-        />
-        <CustomButton
-          buttonText="Update Info"
-          variant="primary"
-          isDisabled={true}
-          userDefineClasses="uppercase font-medium text-16"
-        />
-      </form>
+      <TextField
+        variant="primary"
+        id="userId"
+        inputValue="Karanpaul85"
+        type="text"
+        startAdornment={<Icon name="user" />}
+        isAutoComplete={false}
+        isRequired={false}
+        disabled
+        readOnly
+      />
+      <CustomButton
+        type="button"
+        id="marritalStatus"
+        buttonText="Marrital Status"
+        variant="basicBtn"
+        startAdornment={<Icon name="marriage" />}
+        endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
+        onclick={(e) => handleClick("marritalStatus")}
+      />
+      <CustomButton
+        type="button"
+        id="gender"
+        buttonText="Gender"
+        variant="basicBtn"
+        startAdornment={<Icon name="gender" classes="w-6 h-6" />}
+        endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
+        onclick={(e) => handleClick("gender")}
+      />
+      <CustomButton
+        type="button"
+        id="dependend"
+        buttonText="Dependend on You"
+        variant="basicBtn"
+        startAdornment={<Icon name="family" classes="w-6 h-6" />}
+        endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
+        onclick={(e) => handleClick("dependend")}
+      />
+      <CustomButton
+        type="button"
+        id="area"
+        buttonText="Where you live"
+        variant="basicBtn"
+        startAdornment={<Icon name="map-pin" classes="w-6 h-6" />}
+        endAdornment={<Icon name="chevron-down" classes="w-6 h-6" />}
+        onclick={(e) => handleClick("area")}
+      />
+      <CustomButton
+        type="button"
+        id="password"
+        buttonText="Change Password"
+        variant="basicBtn"
+        startAdornment={<Icon name="lock-closed" classes="w-6 h-6" />}
+        onclick={(e) => handleClick("password")}
+      />
+      <CustomButton
+        buttonText="Update Info"
+        variant="primary"
+        isDisabled={true}
+        userDefineClasses="uppercase font-medium text-16"
+      />
       <Drower
         heading="Change Your Password"
         isOpenDrower={isOpen}
