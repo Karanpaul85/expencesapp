@@ -26,7 +26,7 @@ const Profile = () => {
       });
     }
     console.log("Drower after type changed:", drowerType);
-  }, [drowerType, pathName, router]);
+  }, [drowerType]);
 
   const handleClick = (clickType) => {
     setDrowerType(clickType);
