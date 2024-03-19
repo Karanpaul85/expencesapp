@@ -5,12 +5,11 @@ import CustomButton from "@/components/cutomButton";
 import Drower from "@/components/drower";
 import Layout from "@/components/layout";
 import TextField from "@/components/textFiled";
-import { useRouter } from "next/navigation";
 import ProfilePhotoName from "@/components/profilePhotoName";
 import { drowerConstant } from "@/utils/constant";
+import { removeHashToRoute, setHashToRoute } from "@/utils/common";
 
 const Profile = () => {
-  const router = useRouter();
   const [test, setTest] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [drowerType, setDrowerType] = useState("");
@@ -19,6 +18,7 @@ const Profile = () => {
   const handleClick = (clickType) => {
     setDrowerType(clickType);
     setIsOpen(true);
+    setHashToRoute(clickType);
   };
 
   const handleChnage = () => {
@@ -27,7 +27,7 @@ const Profile = () => {
 
   const handleClose = () => {
     setIsOpen(!isOpen);
-    router.back();
+    removeHashToRoute();
   };
 
   const renderPasswordDrower = () => {
